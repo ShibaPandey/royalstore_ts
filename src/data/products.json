@@ -1,0 +1,158 @@
+{
+  "products": [
+    {
+      "SN": 1,
+      "Name": "Ultra HD Smart TV",
+      "Brand": "Samsung",
+      "Category": "Electronics",
+      "Price": 799.99
+    },
+    {
+      "SN": 2,
+      "Name": "Wireless Noise-Canceling Headphones",
+      "Brand": "Sony",
+      "Category": "Electronics",
+      "Price": 299.99
+    },
+    {
+      "SN": 3,
+      "Name": "Running Shoes Air Max",
+      "Brand": "Nike",
+      "Category": "Sports",
+      "Price": 129.99
+    },
+    {
+      "SN": 4,
+      "Name": "Gaming Laptop Pro",
+      "Brand": "Asus",
+      "Category": "Electronics",
+      "Price": 1299.99
+    },
+    {
+      "SN": 5,
+      "Name": "Coffee Maker Deluxe",
+      "Brand": "Breville",
+      "Category": "Appliances",
+      "Price": 199.99
+    },
+    {
+      "SN": 6,
+      "Name": "Leather Crossbody Bag",
+      "Brand": "Coach",
+      "Category": "Fashion",
+      "Price": 248.99
+    },
+    {
+      "SN": 7,
+      "Name": "Smartwatch Series 7",
+      "Brand": "Apple",
+      "Category": "Electronics",
+      "Price": 399.99
+    },
+    {
+      "SN": 8,
+      "Name": "Air Purifier Plus",
+      "Brand": "Dyson",
+      "Category": "Appliances",
+      "Price": 449.99
+    },
+    {
+      "SN": 9,
+      "Name": "Basketball Shoes Elite",
+      "Brand": "Adidas",
+      "Category": "Sports",
+      "Price": 139.99
+    },
+    {
+      "SN": 10,
+      "Name": "Stand Mixer Professional",
+      "Brand": "KitchenAid",
+      "Category": "Appliances",
+      "Price": 379.99
+    },
+    {
+      "SN": 11,
+      "Name": "Wireless Gaming Mouse",
+      "Brand": "Logitech",
+      "Category": "Electronics",
+      "Price": 79.99
+    },
+    {
+      "SN": 12,
+      "Name": "Designer Sunglasses",
+      "Brand": "Ray-Ban",
+      "Category": "Fashion",
+      "Price": 159.99
+    },
+    {
+      "SN": 13,
+      "Name": "Robot Vacuum Cleaner",
+      "Brand": "iRobot",
+      "Category": "Appliances",
+      "Price": 299.99
+    },
+    {
+      "SN": 14,
+      "Name": "Leather Wallet Premium",
+      "Brand": "Fossil",
+      "Category": "Fashion",
+      "Price": 59.99
+    },
+    {
+      "SN": 15,
+      "Name": "Tennis Racket Pro",
+      "Brand": "Wilson",
+      "Category": "Sports",
+      "Price": 189.99
+    },
+    {
+      "SN": 16,
+      "Name": "Bluetooth Speaker Ultimate",
+      "Brand": "JBL",
+      "Category": "Electronics",
+      "Price": 149.99
+    },
+    {
+      "SN": 17,
+      "Name": "Running Track Suit",
+      "Brand": "Puma",
+      "Category": "Sports",
+      "Price": 89.99
+    },
+    {
+      "SN": 18,
+      "Name": "Digital Camera Pro",
+      "Brand": "Canon",
+      "Category": "Electronics",
+      "Price": 699.99
+    },
+    {
+      "SN": 19,
+      "Name": "Designer Watch Classic",
+      "Brand": "Michael Kors",
+      "Category": "Fashion",
+      "Price": 249.99
+    },
+    {
+      "SN": 20,
+      "Name": "Food Processor Complete",
+      "Brand": "Cuisinart",
+      "Category": "Appliances",
+      "Price": 179.99
+    },
+    {
+      "SN": 21,
+      "Name": "Gaming Console Next-Gen",
+      "Brand": "Sony",
+      "Category": "Electronics",
+      "Price": 499.99
+    },
+    {
+      "SN": 22,
+      "Name": "Yoga Mat Premium",
+      "Brand": "Lululemon",
+      "Category": "Sports",
+      "Price": 68.99
+    }
+  ]
+}

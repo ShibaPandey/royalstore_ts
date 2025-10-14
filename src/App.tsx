@@ -1,11 +1,15 @@
-import CompoA from "./component/CompoA"
-
+import { Suspense } from "react";
+import LoadingSpinner from "./component/LoadingSpinner";
+import Routes from "./routes/Routes";
 
 const App = () => {
-  const age = 23
   return (
-<CompoA title= "Shiba" age= {age} subTitle="it is just subtitle"/>
-  )
-}
+    <>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Routes />
+      </Suspense>
+    </>
+  );
+};
 
-export default App
+export default App;
