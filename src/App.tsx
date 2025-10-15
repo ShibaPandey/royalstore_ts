@@ -3,10 +3,11 @@ import LoadingSpinner from "./component/LoadingSpinner";
 import Routes from "./routes/Routes";
 
 const App = () => {
+  const isAuth = false;
   return (
     <>
       <Suspense fallback={<LoadingSpinner />}>
-        <Routes />
+        <Routes user={isAuth} />
       </Suspense>
     </>
   );
