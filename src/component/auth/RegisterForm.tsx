@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const RegisterForm = () => {
   return (
     <section className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 flex items-center justify-center p-4">
@@ -12,7 +14,7 @@ const RegisterForm = () => {
               htmlFor="name"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Full Name
+              Name
             </label>
             <input
               type="text"
@@ -54,21 +56,22 @@ const RegisterForm = () => {
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
             />
           </div>
-          {/* Terms */}
-          <div className="flex items-center text-sm">
-            <input
-              type="checkbox"
-              id="terms"
-              required
-              className="w-4 h-4 mr-2 text-blue-600 rounded focus:ring-0"
-            />
-            <label htmlFor="terms" className="text-gray-600">
-              I agree to the{" "}
-              <a href="#" className="text-blue-600 underline">
-                terms &amp; conditions
-              </a>
+          <div>
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Confirm Password
             </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+            />
           </div>
+
           {/* Submit Button */}
           <button
             type="submit"
@@ -79,12 +82,12 @@ const RegisterForm = () => {
           {/* Login Redirect */}
           <p className="text-center text-sm text-gray-600 mt-4">
             Already have an account?
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="text-blue-600 font-medium hover:underline"
             >
               Login
-            </a>
+            </Link>
           </p>
         </form>
       </div>
