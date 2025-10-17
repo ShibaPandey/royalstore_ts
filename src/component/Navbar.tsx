@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import navMenu from "../constants/navMenu";
 import Logo from "./Logo";
 import { useState } from "react";
+import { logout } from "../api/auth";
 
 const Navbar = ({ user }: { user: boolean }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -76,7 +77,10 @@ const Navbar = ({ user }: { user: boolean }) => {
                 ))}
               {user ? (
                 <li>
-                  <button className="bg-red-700 text-white py-2 px-5 rounded-xl cursor-pointer">
+                  <button
+                    onClick={logout}
+                    className="bg-red-700 text-white py-2 px-5 rounded-xl cursor-pointer"
+                  >
                     Logout
                   </button>
                 </li>

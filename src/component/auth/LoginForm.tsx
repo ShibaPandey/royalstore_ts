@@ -1,16 +1,28 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useForm } from "react-hook-form";
 
 import type { logInFormType } from "../../types/authFormTypes";
 import { Link } from "react-router-dom";
 import { EMAIL_REGEX } from "../../constants/regex";
+import { useState } from "react";
+import { login } from "../../api/auth";
+import Loder from "../Loder";
 
 const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit, formState, setError } =
     useForm<logInFormType>({ mode: "all" });
   const { errors } = formState;
   //   const { name, ref, onChange, onBlur } = register("email");
   const onSubmit = async (data: logInFormType) => {
-    console.log(data);
+    try {
+      setLoading(true);
+      await login(data);
+    } catch (error: any) {
+      setError("root", { message: error.response.data });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -61,17 +73,27 @@ const LoginForm = () => {
               <input
                 type="password"
                 id="password"
-                name="password"
-                required
+                {...register("password", {
+                  required: { value: true, message: "password is requred" },
+                  minLength: {
+                    value: 8,
+                    message: "Passowrd must be eight digit",
+                  },
+                })}
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
               />
+              <p className="text-sm text-red-600 mt-2">
+                {typeof errors.password?.message === "string"
+                  ? errors.password?.message
+                  : null}
+              </p>
             </div>
             {/* Submit Button */}
             <button
               type="submit"
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md transition-all duration-200"
             >
-              LogIn
+              {loading ? <Loder /> : "Login"}
             </button>
             {/* Login Redirect */}
             <p className="text-center text-sm text-gray-600 mt-4">
