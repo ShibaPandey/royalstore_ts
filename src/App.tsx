@@ -1,14 +1,16 @@
 import { Suspense } from "react";
 import LoadingSpinner from "./component/LoadingSpinner";
 import Routes from "./routes/Routes";
-import { isAuth } from "./api/auth";
+import { useSelector } from "react-redux";
+import type { RootState } from "./redux/store";
+
 
 const App = () => {
-  const user = isAuth();
+const isAuth = useSelector((state:RootState)=>state.auth.isAuth)
   return (
     <>
       <Suspense fallback={<LoadingSpinner />}>
-        <Routes user={user} />
+        <Routes user={isAuth} />
       </Suspense>
     </>
   );

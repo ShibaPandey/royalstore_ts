@@ -3,7 +3,7 @@ import type { heroTypes } from "../types/heroTypes";
 const Hero = ({ title, subTitle }: heroTypes) => {
   return (
     <>
-      <section className=" w-full  bg-[#0A2025] py-9 px-8">
+      <section className=" w-full  bg-[#c2cdcf] py-9 px-8">
         <div className="mx-auto flex  flex-col items-center lg:flex-row justify-center gap-10 py-40 max-w-[1440px] bg-no-repeat ">
           <div className="w-[660px]  flex-col justify-center items-start gap-20 inline-flex">
             <div className="self-stretch  flex-col justify-start items-start gap-5 flex">

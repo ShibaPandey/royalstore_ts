@@ -1,28 +1,24 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useForm } from "react-hook-form";
-
 import type { logInFormType } from "../../types/authFormTypes";
 import { Link } from "react-router-dom";
 import { EMAIL_REGEX } from "../../constants/regex";
-import { useState } from "react";
-import { login } from "../../api/auth";
 import Loder from "../Loder";
+import { useDispatch, useSelector } from "react-redux";
+import { type AppDispatch, type RootState } from "../../redux/store";
+import { loginUser } from "../../redux/auth/authActions";
 
 const LoginForm = () => {
-  const [loading, setLoading] = useState(false);
-  const { register, handleSubmit, formState, setError } =
-    useForm<logInFormType>({ mode: "all" });
+  const dispatch = useDispatch<AppDispatch>();
+  const { loading, error } = useSelector((state: RootState) => state.auth);
+
+  const { register, handleSubmit, formState } = useForm<logInFormType>({
+    mode: "all",
+  });
   const { errors } = formState;
   //   const { name, ref, onChange, onBlur } = register("email");
   const onSubmit = async (data: logInFormType) => {
-    try {
-      setLoading(true);
-      await login(data);
-    } catch (error: any) {
-      setError("root", { message: error.response.data });
-    } finally {
-      setLoading(false);
-    }
+    dispatch(loginUser(data));
   };
 
   return (
@@ -95,6 +91,7 @@ const LoginForm = () => {
             >
               {loading ? <Loder /> : "Login"}
             </button>
+            <p className="text-sm text-red-500 mt-2">{error}</p>
             {/* Login Redirect */}
             <p className="text-center text-sm text-gray-600 mt-4">
               DO you not have an account ?

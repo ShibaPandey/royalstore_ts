@@ -3,28 +3,20 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import type { registerFormType } from "../../types/authFormTypes";
 import { EMAIL_REGEX, NAME_REGEX } from "../../constants/regex";
-import { useState } from "react";
 import Loder from "../Loder";
-import { Register } from "../../api/auth";
+import { useDispatch, useSelector } from "react-redux";
+import { type AppDispatch, type RootState } from "../../redux/store";
+import { registerUser } from "../../redux/auth/authActions";
 
 const RegisterForm = () => {
-  const [loading, setLoading] = useState(false);
-
-  const { register, handleSubmit, formState, watch, setError } =
+  const { loading, error } = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch<AppDispatch>();
+  const { register, handleSubmit, formState, watch } =
     useForm<registerFormType>({ mode: "all" });
   const { errors } = formState;
   const password = watch("password");
   const onSubmit = async (data: registerFormType) => {
-    try {
-      setLoading(true);
-      await Register(data);
-      alert("register successfully");
-      console.log(data);
-    } catch (error: any) {
-      setError("root", { message: error.response.data });
-    } finally {
-      setLoading(false);
-    }
+    dispatch(registerUser(data));
   };
 
   return (
@@ -126,11 +118,7 @@ const RegisterForm = () => {
               })}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
             />
-            <p className="text-sm text-red-600 mt-2">
-              {typeof errors.confirmPassword?.message === "string"
-                ? errors.confirmPassword?.message
-                : null}
-            </p>
+            <p className="text-sm text-red-600 mt-2">{error}</p>
           </div>
 
           {/* Submit Button */}
